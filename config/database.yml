@@ -1,0 +1,24 @@
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: lithium_ion_api_development
+  host: localhost
+  port: 5432
+  username: postgres
+  password: Satyendra@84%
+
+test:
+  <<: *default
+  database: lithium_ion_api_test
+
+production:
+  <<: *default
+  database: lithium_ion_api_production
+  username: lithium_ion_api
+  password: <%= ENV["Satyendra@84%"] %>
